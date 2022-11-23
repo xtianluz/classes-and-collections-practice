@@ -36,12 +36,20 @@ fun main(){
     println( "Number of short events is: $shortDurationEventTotal")
 
     //Task 5 make a summary of all events base on DayPart
-    
+    val morningEvent = eventList.filter{ it.dayPart == DayPart.MORNING }
+    val afternoonEvent = eventList.filter{ it.dayPart == DayPart.AFTERNOON}
+    val nightEvent = eventList.filter { it.dayPart == DayPart.NIGHT }
 
-//    println(eventOne)
-//    eventList.forEach {
-//        println(it)
+    println("Number of morning events: ${morningEvent.size}")
+    println("Number of afternoon events: ${afternoonEvent.size}")
+    println("Number of evening events: ${nightEvent.size}")
+
+//Task 5 solution from codelab
+//    val groupedEvents = eventList.groupBy { it.dayPart }
+//    groupedEvents.forEach { (dayPart, events) ->
+//        println("$dayPart: ${events.size} events")
 //    }
+
 }
 
 //Task 3, refactor this code to a single variable
