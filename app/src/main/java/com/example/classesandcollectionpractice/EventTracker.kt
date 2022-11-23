@@ -12,6 +12,13 @@ data class Event(
     val dayPart: DayPart,
     val duration: Int
 )
+    //Task 7
+    val Event.durationOfEvent: String // when extending property need to be declared after the class not outside
+    get() = if(this.duration < 60){
+        "short"
+    } else {
+        "long"
+    }
 
 fun main(){
     val eventOne = Event("Study Kotlin",
@@ -43,6 +50,13 @@ fun main(){
     println("Number of morning events: ${morningEvent.size}")
     println("Number of afternoon events: ${afternoonEvent.size}")
     println("Number of evening events: ${nightEvent.size}")
+
+    //Task 6 reduce the code from println("Last event of the day: ${events[events.size - 1].title}") toi get the last event
+    println("Last event of the day: ${eventList.last().title}")//answer
+
+    //Task 7
+
+    println("Duration of first event of the day: ${eventList[0].durationOfEvent}")
 
 //Task 5 solution from codelab
 //    val groupedEvents = eventList.groupBy { it.dayPart }
